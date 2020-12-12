@@ -1,4 +1,7 @@
 #!/bin/sh
+# docker rm $(docker ps -a -q)
+# docker rmi $(docker images -q)
+
 echo "Building + Running containers"
 docker-compose up -d --build
 
