@@ -1,9 +1,7 @@
 #!/bin/sh
-# docker rm $(docker ps -a -q)
-# docker rmi $(docker images -q)
-
 echo "Building + Running containers"
-docker-compose up -d --build
+docker-compose build
+docker-compose up -d
 
 echo "Creating + Seeding DB"
 docker-compose exec api python manage.py recreate_db
